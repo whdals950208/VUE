@@ -1,5 +1,5 @@
 <template>
-<h1>뮤직111</h1>
+<h1>뮤직</h1>
 </template>
 
 <script>
