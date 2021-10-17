@@ -1,0 +1,25 @@
+
+CREATE SEQUENCE auto_increment START 1;
+ALTER SEQUENCE auto_increment RESTART WITH 1;
+DROP TABLE v_board;
+CREATE TABLE V_BOARD (
+	IDX INTEGER DEFAULT NEXTVAL('auto_increment'),
+	ID VARCHAR(100) NOT NULL,
+	NAME VARCHAR(30),
+	PW VARCHAR(100),
+	TITLE VARCHAR(100) NOT NULL,
+	CONTENT TEXT,
+	CRTDT TIMESTAMP DEFAULT NOW(),
+	UPTDT TIMESTAMP,
+	HIT INTEGER DEFAULT 0
+);
+DELETE FROM V_BOARD;
+INSERT INTO v_board (id,name,title,content)
+VALUES ('dkfjldsf','종민','안녕','키키');
+INSERT INTO v_board (id,name,title,content)
+VALUES ('dkfjldsf2','종민2','안녕2','키키2');
+INSERT INTO v_board (id,name,title,content)
+VALUES ('dkfjldsf3','종민3','안녕3','키키3');
+select * from v_board;
+commit;
+SELECT * FROM V_BOARD;
