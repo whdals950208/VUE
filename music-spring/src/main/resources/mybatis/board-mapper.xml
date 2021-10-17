@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="music.musicspring.board.BoardDAO">
+    <resultMap id="board" type="music.musicspring.domain.BoardVO">
+        <result property="idx" column="IDX" />
+        <result property="id" column="ID" />
+        <result property="pw" column="PW" />
+        <result property="name" column="NAME" />
+        <result property="title" column="TITLE" />
+        <result property="content" column="CONTENT" />
+        <result property="crtDt" column="CRTDT" />
+        <result property="uptDt" column="UDTDT" />
+        <result property="hit" column="HIT" />
+    </resultMap>
+
+    <select id="getBoardList" resultType="music.musicspring.domain.BoardVO">/**/
+        SELECT IDX
+             , ID
+             , NAME
+             , TITLE
+             , CONTENT
+             , TO_CHAR(CRTDT, 'YYYY-MM-DD') AS CRTDT
+             , HIT
+          FROM
+               VUE.V_BOARD
+    </select>
+    <select id="getBoardDetail" resultType="music.musicspring.domain.BoardVO"
+            parameterType="music.musicspring.domain.BoardVO">/**/
+        SELECT *
+          FROM VUE.V_BOARD
+    </select>
+
+</mapper>

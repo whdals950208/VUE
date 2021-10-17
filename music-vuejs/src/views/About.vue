@@ -2,7 +2,7 @@
   <div class="about">
     <h1>This is an about page</h1>
     <ul>
-      <li v-for="b in a">{{ b }} </li>
+      <li v-for="b in a">{{ b.table_schema }} </li>
     </ul>
     <b-button @click="axiosTest">버튼</b-button>
     <p>e : {{err}}</p>

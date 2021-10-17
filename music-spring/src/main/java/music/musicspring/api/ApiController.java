@@ -18,7 +18,6 @@ public class ApiController {
         System.out.println(request.getMethodValue());
         System.out.println(request.getClass());
     //    System.out.println(param);
-        gkgkgkgkgk
         return "index";
     }
 }
