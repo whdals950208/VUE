@@ -1,10 +1,22 @@
 <template>
-<h1>게시판</h1>
+  <div>
+    <b-table striped hover :items="items" ></b-table>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "Board"
+  data() {
+    return {
+      items: []
+    }
+  },
+  mounted() {
+    this.$axios.get("/api/board/list")
+    .then(res =>{
+      this.items = res.data;
+    })
+  },
 }
 </script>
 
