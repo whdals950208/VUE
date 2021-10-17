@@ -39,7 +39,7 @@ const routes = [
   {
     path: '/notice',
     name: 'Notice',
-    component: () => import('../views/board/Notice.vue')
+    component: () => import('../views/notice/Notice.vue')
   },
   {
     path: '/login',
