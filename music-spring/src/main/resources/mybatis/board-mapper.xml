@@ -28,7 +28,7 @@
             parameterType="music.musicspring.domain.BoardVO">/**/
         SELECT *
           FROM VUE.V_BOARD
-         WHERE IDX = 1
+         WHERE IDX = #{idx}
     </select>
 
     <insert id="upsertBoard" parameterType="integer">

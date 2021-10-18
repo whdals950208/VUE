@@ -32,10 +32,7 @@ export default {
   },
   methods : {
     getBoardDetail(rowdata){
-      let options = {
-        headers: {'Content-Type': 'application/json'}
-      }
-      this.$axios.get("/api/board/detail", options)
+      this.$axios.get(`/api/board/detail/${rowdata.idx}`)
       .then(res =>{
         this.items = res.data;
       })
