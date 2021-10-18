@@ -20,8 +20,10 @@ public class BoardController {
         return service.getBoardList();
     }
 
-    @GetMapping("/detail")
-    public List<BoardVO> getBoardDetail(@RequestBody BoardVO vo){
+    @GetMapping("/detail/{idx}")
+    public List<BoardVO> getBoardDetail(@PathVariable int idx){
+        BoardVO vo = new BoardVO();
+        vo.setIdx(idx);
         return service.getBoardDetail(vo);
     }
 

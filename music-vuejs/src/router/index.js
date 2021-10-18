@@ -46,6 +46,10 @@ const routes = [
     name: 'Login',
     component: () => import('../views/login/Login.vue')
   },
+  {
+    path: '*',
+    component: () => import ('@/views/NotFoundPage.vue'),
+  },
   /*{
     path: '/callback',
     name: 'Callback',
