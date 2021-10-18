@@ -28,6 +28,34 @@
             parameterType="music.musicspring.domain.BoardVO">/**/
         SELECT *
           FROM VUE.V_BOARD
+         WHERE IDX = 1
     </select>
 
+    <insert id="upsertBoard" parameterType="integer">
+        INSERT
+          INTO VUE.V_BOARD (
+               ID
+             , NAME
+             , TITLE
+             , CONTENT
+             , CRTDT
+             , UDTDT
+            ) VALUES (
+                      #{id}
+                    , #{name}
+                    , #{title}
+                    , #{content}
+                    , ""
+                    , ""
+            )
+            ON DUPLICATE KEY
+        UPDATE TITLE = #{title}
+             CONTENT = #{content}
+    </insert>
+
+    <delete id="deleteBoard" parameterType="integer">
+        DELETE
+          FROM  VUE.V_BOARD
+         WHERE IDX = #{idx}
+    </delete>
 </mapper>
